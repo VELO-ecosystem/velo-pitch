@@ -512,8 +512,9 @@ function SlideSolution({ active }) {
     { name: "Behavioral Analysis AI", desc: "Сквозная аналитика всех действий пользователя внутри приложения для понимания запроса, формирования психологического портрета и определения слепых зон" },
     { name: "Journal with journey map", desc: "Пространство для рефлексии и карта личностного развития" },
     { name: "Deep Cards & Quizzes", desc: "Интерактивные сессии и психологические тесты для познания себя" },
-    { name: "AI Quick-Pick Library", desc: "2–3 карточки практик, подобранных AI на основе данных о текущем состоянии пользователя" },
+    { name: "AI Quick-Pick Library", desc: "2–3 карточки практик, подобранные AI на основе данных о текущем состоянии пользователя (безопасный подбор, учитывающий все особенности пользователя)" },
     { name: "Master Rooms", desc: "Пространство для мастеров, где практики соединяются с AI-навигацией и данными о состоянии пользователей" },
+    { name: "Inner Labs", desc: "Символические сценарии для «проживания» инсайтов. Персонализировано генерируются на основе карты тем" },
   ];
   return (
     <SlideBg>
@@ -956,9 +957,9 @@ function SlideMoney({ active }) {
     () => (
       <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
         {[
-          { tier: "FREE", price: "", color: C.bluePale, items: ["Базовая AI-аналитика", "Личный дневник состояния", "Ограниченный дневник сновидений", "Ограниченный доступ к Deep Cards", "Трекер состояний перед практиками"] },
+          { tier: "FREE", price: "", color: C.bluePale, items: ["Базовая AI-аналитика", "Личный дневник состояния", "Ограниченный дневник сновидений", "Ограниченный доступ к Deep Cards", "Трекер состояний перед практиками", "Подключение биометрики (Apple Health/Oura/Whoop)"] },
           { tier: "PRO", price: "$19,99/мес", color: C.navyLight, items: ["AI дневник с анализом записей (глубокая AI-рефлексия)", "Сквозные AI-отчеты по состоянию, паттернам и инсайтам", "Персонализированные рекомендации быстрых практик", "Безлимитные тестирования по самопознанию", "Неограниченный доступ к интерактивным сессиям", "Неограниченный доступ к дневнику сновидений", "AI Match — подбор мастера по дневнику для сессии 1:1", "Inner Lab — интерактивные сценарии"] },
-          { tier: "ULTRA", price: "$29,99/мес · Фаза 2", color: C.navy, items: ["Ранний доступ к экспериментальным функциям", "Персональный AI-коуч 24/7", "Персональные планы под запрос на 30/60/90 дней", "Подключение биометрики (Apple Health/Oura)", "Прогностическая AI-модель (прогноз состояний, спадов, выгорания, блоков)"] },
+          { tier: "ULTRA", price: "$29,99/мес · Фаза 2", color: C.navy, items: ["Ранний доступ к экспериментальным функциям", "Персональный AI-коуч 24/7", "Персональные планы под запрос на 30/60/90 дней", "Прогностическая AI-модель (прогноз состояний, спадов, выгорания, блоков)"] },
         ].map((t, i) => (
           <div key={i} style={{ flex: "1 1 200px", padding: "18px 20px", borderRadius: 16, background: C.white, border: `2px solid ${t.color}30`, transition: "all 0.3s", cursor: "default" }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = t.color; e.currentTarget.style.transform = 'translateY(-3px)'; }}
@@ -1001,7 +1002,7 @@ function SlideMoney({ active }) {
         <div style={{ fontFamily: FONT_SANS, fontSize: 15, fontWeight: 600, color: C.navy, marginBottom: 12 }}>ПОДПИСКА PRO ДЛЯ МАСТЕРОВ (ФАЗА 2)</div>
         <div style={{ fontFamily: FONT_SANS, fontSize: 14, fontWeight: 500, color: C.navyLight, marginBottom: 14 }}>MVP: Бесплатно (стратегия привлечения supply)</div>
         <div style={{ fontFamily: FONT_SANS, fontSize: 14, fontWeight: 600, color: C.navy, marginBottom: 8 }}>Фаза 2:</div>
-        {["Расширенная аналитика по группам", "Приоритет в рекомендациях", "Расширенная библиотека записей"].map((t, i) => (
+        {["Расширенная аналитика по группам, в т.ч. физиологические и психологические ограничения", "Приоритет в рекомендациях", "Расширенная библиотека записей"].map((t, i) => (
           <div key={i} style={{ fontFamily: FONT_SANS, fontSize: 14, color: C.textSoft, fontWeight: 300, lineHeight: 1.8, paddingLeft: 12, position: "relative" }}><span style={{ position: "absolute", left: 0, color: C.bluePale }}>·</span>{t}</div>
         ))}
         <div style={{ fontFamily: FONT_SANS, fontSize: 13, fontWeight: 500, color: C.navyLight, marginTop: 16, fontStyle: "italic" }}>Доход платформы: B2B-подписка · Предсказуемый доход</div>
@@ -1060,6 +1061,7 @@ function SlidePricing({ active }) {
     { name: "Дневник состояний", free: "●", pro: "●", ultra: "●" },
     { name: "Дневник сновидений", free: "4/мес", pro: "безлимит", ultra: "безлимит" },
     { name: "Интерактивные сессии самопознания", free: "1/мес", pro: "безлимит", ultra: "безлимит" },
+    { name: "Биометрика (Apple Health / Oura / Whoop)", free: "●", pro: "●", ultra: "●" },
     { name: "Библиотека практик", free: "○", pro: "безлимит", ultra: "безлимит" },
     { name: "AI дневник с анализом записей", free: "○", pro: "●", ultra: "●" },
     { name: "AI-отчёты по паттернам и инсайтам", free: "○", pro: "●", ultra: "●" },
@@ -1068,7 +1070,6 @@ function SlidePricing({ active }) {
     { name: "Inner Lab — интерактивные сценарии", free: "○", pro: "●", ultra: "●" },
     { name: "Персональный AI-коуч 24/7", free: "○", pro: "○", ultra: "●" },
     { name: "Планы на 30/60/90 дней", free: "○", pro: "○", ultra: "●" },
-    { name: "Биометрика (Apple Health / Oura)", free: "○", pro: "○", ultra: "●" },
     { name: "Ранний доступ к экспериментальным функциям", free: "○", pro: "○", ultra: "●" },
     { name: "Прогностическая AI-модель (прогноз состояний, спадов, выгорания, блоков)", free: "○", pro: "○", ultra: "●" },
   ];
