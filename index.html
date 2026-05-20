@@ -655,7 +655,7 @@ function SlideArch({ active }) {
   const s1 = useAnimIn(5, active ? 5 : -1, 200);
   const s2 = useAnimIn(5, active ? 5 : -1, 500);
   const s3 = useAnimIn(5, active ? 5 : -1, 800);
-  const caps = ["Выстраивать сложные цепочки рассуждений", "Обеспечивать высокую степень персонализации", "Выявлять эмоциональные паттерны", "Структурировать данные и давать релевантные рекомендации", "Отражать ключевые эмоциональные, поведенческие тренды"];
+  const caps = ["Выявлять эмоциональные паттерны с большей точностью", "Структурировать данные и давать релевантные рекомендации", "Отражать ключевые эмоциональные, поведенческие тренды"];
   return (
     <SlideBg>
       <div style={{ maxWidth: 920, width: "90%", padding: "0 20px" }}>
@@ -668,17 +668,17 @@ function SlideArch({ active }) {
         <AD show={s2} delay={200}>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "center" }}>
             <div style={{ flex: "1 1 320px", maxWidth: 420, padding: "20px 24px", borderRadius: 18, background: C.white, border: `1px solid ${C.bluePale}60` }}>
-              <h3 style={{ fontFamily: FONT_SANS, fontSize: 16, fontWeight: 600, color: C.navy, marginBottom: 8, marginTop: 0 }}>АГРЕГИРОВАННЫЕ МОДЕЛИ</h3>
-              <p style={{ fontFamily: FONT_SANS, fontSize: 14, color: C.textSoft, fontWeight: 300, lineHeight: 1.65, margin: 0 }}>VELΘ подключается к ведущим AI-провайдерам и динамически выбирает лучший сервис для каждой задачи</p>
+              <h3 style={{ fontFamily: FONT_SANS, fontSize: 16, fontWeight: 600, color: C.navy, marginBottom: 8, marginTop: 0 }}>СМАРТ-РОУТИНГ</h3>
+              <p style={{ fontFamily: FONT_SANS, fontSize: 14, color: C.textSoft, fontWeight: 300, lineHeight: 1.65, margin: 0 }}>VELΘ подключается к ведущим AI-провайдерам и динамически выбирает лучший набор сервисов для каждой задачи</p>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
-                {["поиска", "генерации", "анализа", "вычислений", "автоматизации"].map((t, i) => (
+                {["поиска", "генерации", "анализа", "вычислений", "автоматизации", "рассуждений", "персонализации"].map((t, i) => (
                   <span key={i} style={{ fontFamily: FONT_SANS, fontSize: 12, color: C.navyLight, background: C.ice, padding: "4px 10px", borderRadius: 8, fontWeight: 500 }}>{t}</span>
                 ))}
               </div>
             </div>
             <div style={{ flex: "1 1 320px", maxWidth: 420, padding: "20px 24px", borderRadius: 18, background: C.white, border: `1px solid ${C.bluePale}60` }}>
-              <h3 style={{ fontFamily: FONT_SANS, fontSize: 16, fontWeight: 600, color: C.navy, marginBottom: 8, marginTop: 0 }}>ФАЙНТЮНИНГОВЫЕ МОДЕЛИ</h3>
-              <p style={{ fontFamily: FONT_SANS, fontSize: 14, color: C.textSoft, fontWeight: 300, lineHeight: 1.65, marginTop: 0, marginBottom: 12 }}>Параллельно с внешними инструментами VELΘ использует дообученные модели и подсистемы, интегрированные с коммерческими лидерами</p>
+              <h3 style={{ fontFamily: FONT_SANS, fontSize: 16, fontWeight: 600, color: C.navy, marginBottom: 8, marginTop: 0 }}>ДООБУЧЕННЫЕ МОДЕЛИ</h3>
+              <p style={{ fontFamily: FONT_SANS, fontSize: 14, color: C.textSoft, fontWeight: 300, lineHeight: 1.65, marginTop: 0, marginBottom: 12 }}>Параллельно с внешними инструментами VELΘ использует файнтюнинговые модели и агентские подсистемы, интегрированные с коммерческими лидерами</p>
               <p style={{ fontFamily: FONT_SANS, fontSize: 13, fontWeight: 600, color: C.navy, marginBottom: 8 }}>Что позволяет:</p>
               {caps.map((c, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
@@ -755,20 +755,17 @@ function SlideGrowth({ active }) {
   const s1 = useAnimIn(7, active ? 7 : -1, 200);
   const s2 = useAnimIn(7, active ? 7 : -1, 600);
   const bars = [
-    { label: "Конец\n2026", value: 80000 },
-    { label: "2027", value: 1000000 },
-    { label: "2028", value: 4000000 },
+    { label: "Конец\n2026", value: 25000 },
+    { label: "2027", value: 100000 },
+    { label: "2028", value: 600000 },
   ];
-  const maxVal = 4000000;
+  const maxVal = 600000;
   const fmtNum = (v) => v >= 1000000 ? (v / 1000000) + " 000 000" : v >= 1000 ? (v / 1000).toLocaleString() + " 000" : v.toString();
   return (
     <SlideBg>
       <div style={{ maxWidth: 920, width: "90%", padding: "0 20px" }}>
         <AD show={s1}>
-          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 10 }}>ЦЕЛЬ VEL<Th/> — 5% РЫНКА AI И WELLBEING-ПРИЛОЖЕНИЙ К 2028 ГОДУ</h2>
-          <p style={{ fontFamily: FONT_SANS, fontSize: "clamp(14px, 1.5vw, 17px)", color: C.textSoft, fontWeight: 300, lineHeight: 1.75, marginBottom: 6 }}>
-            Доля рынка может составить уже 10-15% в оптимистичном сценарии. В субнише AI-wellbeing показатель может вырасти до отметки в 25%
-          </p>
+          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 10 }}>ЦЕЛЬ VEL<Th/> — 15% РЫНКА AI И WELLBEING-ПРИЛОЖЕНИЙ К 2028 ГОДУ</h2>
           <p style={{ fontFamily: FONT_SANS, fontSize: "clamp(13px, 1.3vw, 15px)", color: C.textSoft, fontWeight: 300, lineHeight: 1.7, marginBottom: 4 }}>
             Захват доли рынка, сопоставимой с текущими лидерами (Calm/Headspace), обеспечивается за счёт гибридной модели (AI + Human Services), которая увеличивает LTV в 2 раза по сравнению с обычными приложениями
           </p>
@@ -867,7 +864,7 @@ function SlideComp({ active }) {
     { name: "Stoic", spec: 90, eff: 30, feats: [true, false, true] },
     { name: "Liven", spec: 72, eff: 50, feats: [true, false, true] },
     { name: "Honestly", spec: 55, eff: 50, feats: [true, false, true] },
-    { name: "Rosebud: AI\nJournal & Diary", spec: 42, eff: 40, feats: [true, false, true] },
+    { name: "Rosebud", spec: 42, eff: 40, feats: [true, false, true] },
     { name: "Reflection", spec: 25, eff: 40, feats: [true, false, true] },
     { name: "Insight Timer", spec: 25, eff: 60, feats: [true, true, false] },
     { name: "VELΘ", spec: 92, eff: 92, feats: [true, true, true], hl: true },
@@ -908,13 +905,14 @@ function SlideComp({ active }) {
                 const y = 100 - (c.spec / 100) * 100;
                 const isH = hov === i || c.hl;
                 return (
-                  <div key={i} style={{ position: "absolute", left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)", cursor: "pointer", zIndex: isH ? 10 : 1, transition: "all 0.3s" }}
+                  <div key={i} style={{ position: "absolute", left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)", cursor: "pointer", zIndex: isH ? 10 : 2, transition: "all 0.3s" }}
                     onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}>
                     <div style={{ width: c.hl ? 20 : 14, height: c.hl ? 20 : 14, borderRadius: "50%", background: c.hl ? C.navy : isH ? C.navyLight : C.bluePale, transition: "all 0.3s", boxShadow: isH ? `0 2px 12px ${C.navy}30` : "none" }} />
+                    {/* Always-visible name label */}
+                    <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 4, fontFamily: FONT_SANS, fontSize: 11, fontWeight: c.hl ? 700 : 500, color: c.hl ? C.navy : C.textSoft, whiteSpace: "pre-line", textAlign: "center", lineHeight: 1.2, pointerEvents: "none" }}>{c.name}</div>
+                    {/* Hover-only icons */}
                     {(isH || c.hl) && (
-                      <div style={{ position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)", marginTop: 6, background: C.white, padding: "8px 14px", borderRadius: 12, boxShadow: `0 4px 16px ${C.navy}12`, border: `1px solid ${C.bluePale}`, whiteSpace: "nowrap", fontFamily: FONT_SANS, textAlign: "center", minWidth: 100 }}>
-                        <div style={{ fontSize: 13, fontWeight: c.hl ? 700 : 600, color: C.navy, marginBottom: 6 }}>{c.name.replace("\n", " ")}</div>
-                        {/* Feature icons row */}
+                      <div style={{ position: "absolute", bottom: "100%", left: "50%", transform: "translateX(-50%)", marginBottom: 8, background: C.white, padding: "8px 14px", borderRadius: 12, boxShadow: `0 4px 16px ${C.navy}12`, border: `1px solid ${C.bluePale}`, whiteSpace: "nowrap", fontFamily: FONT_SANS, textAlign: "center" }}>
                         <div style={{ display: "flex", gap: 8, justifyContent: "center", alignItems: "center" }}>
                           {c.feats.map((has, fi) => (
                             <div key={fi} title={featLabels[fi]} style={{ width: 24, height: 24 }}>
@@ -1083,11 +1081,11 @@ function SlideFinModel({ active }) {
     { m: "Paying users EOY Y3", a: "8,110 (8.7% MAU)", b: "5,005 (8.0% MAU)" },
     { m: "Masters EOY Y3", a: "1,200", b: "1,200" },
     { m: "3Y Revenue", a: "$4.60M", b: "$3.11M" },
-    { m: "3Y EBITDA", a: "\u2212$0.70M", b: "\u2212$0.88M" },
-    { m: "3Y Marketing spend", a: "$3.22M", b: "$1.97M" },
-    { m: "Peak cash trough", a: "$93K (Y2Q4)", b: "$531K (Y3Q3)" },
-    { m: "Cash at EOY Y3", a: "$0.96M", b: "$0.78M" },
-    { m: "EBITDA-positive quarter", a: "Q1 2029 (Y3Q1)", b: "Q4 2029 (Y3Q4)" },
+    { m: "3Y EBITDA", a: "\u2212$0.70M", b: "\u2212$0.32M" },
+    { m: "3Y Marketing spend", a: "$3.22M", b: "$1.47M" },
+    { m: "Peak cash trough", a: "$93K (Y2Q4)", b: "$1.09M (Y3Q3)" },
+    { m: "Cash at EOY Y3", a: "$0.96M", b: "$1.34M" },
+    { m: "EBITDA-positive quarter", a: "Q1 2029 (Y3Q1)", b: "Q1 2028 (Y2Q3)" },
   ];
   return (
     <SlideBg>
@@ -1095,7 +1093,7 @@ function SlideFinModel({ active }) {
         <AD show={s1}>
           <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 10 }}>ФИНАНСОВАЯ МОДЕЛЬ</h2>
           <p style={{ fontFamily: FONT_SANS, fontSize: 15, color: C.textSoft, fontWeight: 300, lineHeight: 1.65, marginBottom: 20, maxWidth: 760 }}>
-            VEL<Th/> привлекает $1,5 млн в seed раунде. Мы рассматриваем два сценария развития на 36 месяцев (июль 2026 — июнь 2029).
+            VEL<Th/> привлекает $1,5 млн в seed раунде при оценке компании в $15 млн. Мы рассматриваем два сценария развития на 36 месяцев (июль 2026 — июнь 2029).
           </p>
         </AD>
         <AD show={useAnimIn(15, active ? 15 : -1, 400)} delay={200}>
@@ -1132,13 +1130,13 @@ function SlideYearly({ active }) {
   const s1 = useAnimIn(16, active ? 16 : -1, 200);
   const pathA = [
     { m: "Revenue", y1: "$0.12M", y2: "$1.37M", y3: "$3.11M" },
-    { m: "EBITDA", y1: "\u2212$0.34M", y2: "\u2212$1.23M", y3: "+$0.87M" },
+    { m: "EBITDA", y1: "\u2212$0.34M", y2: "\u2212$1.23M", y3: "$0.87M" },
     { m: "End-period cash", y1: "$1.32M", y2: "$0.34M", y3: "$0.96M" },
   ];
   const pathB = [
     { m: "Revenue", y1: "$0.12M", y2: "$0.78M", y3: "$2.21M" },
-    { m: "EBITDA", y1: "\u2212$0.33M", y2: "\u2212$0.50M", y3: "\u2212$0.05M" },
-    { m: "End-period cash", y1: "$1.33M", y2: "$0.94M", y3: "$0.78M" },
+    { m: "EBITDA", y1: "\u2212$0.34M", y2: "$0.07M", y3: "\u2212$0.05M" },
+    { m: "End-period cash", y1: "$1.32M", y2: "$1.39M", y3: "$1.34M" },
   ];
   const renderTable = (title, rows) => (
     <div style={{ overflowX: "auto", background: C.white, borderRadius: 16, border: `1px solid ${C.bluePale}40`, padding: 2, marginBottom: 14 }}>
@@ -1170,7 +1168,7 @@ function SlideYearly({ active }) {
     <SlideBg>
       <div style={{ maxWidth: 1000, width: "94%", padding: "0 20px" }}>
         <AD show={s1}>
-          <h2 style={{ fontFamily: FONT, fontSize: "clamp(26px, 3.2vw, 36px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 16 }}>КРАТКИЙ ОБЗОР ГОДОВЫХ ПРОГНОЗОВ</h2>
+          <h2 style={{ fontFamily: FONT, fontSize: "clamp(26px, 3.2vw, 36px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 16 }}>ПРИЛОЖЕНИЕ 2. КРАТКИЙ ОБЗОР ГОДОВЫХ ПРОГНОЗОВ</h2>
         </AD>
         <AD show={useAnimIn(16, active ? 16 : -1, 400)} delay={200}>
           {renderTable("Путь A — Агрессивный", pathA)}
@@ -1265,17 +1263,17 @@ function SlideAllocation({ active }) {
   const s1 = useAnimIn(14, active ? 14 : -1, 200);
   const rows = [
     { cat: "Команда (базовая команда + найм Y1/Y2)", a: "$1.45M", b: "$1.44M", note: "Год 1: основатель, CPO, аналитик, 2 senior-разработчика, методолог, юридический и финансовый советник, биздев\nГод 2 (дополнит.): Data-инженер, senior-разработчик" },
-    { cat: "Штатные мастера (3 с Y2)", a: "$0.14M", b: "$0.14M", note: "$2K/мес × 3 × 24 мес" },
+    { cat: "Штатные мастера (3 с Y3)", a: "$0.14M", b: "$0.07M", note: "$2K/мес × 3 × 12 мес" },
     { cat: "AI-инфраструктура", a: "$0.03M", b: "$0.02M", note: "С учётом уровня и фазы, скидка 30% при семантическом кэшировании" },
-    { cat: "Маркетинг (платный + бренд)", a: "$3.22M", b: "$1.97M", note: "Год 1: исключительно за счёт бренда $5K/мес\nГод 2-3: годовое платное масштабирование" },
-    { cat: "Переменные операционные расходы (CS, модерация, хостинг)", a: "$0.45M", b: "$0.42M", note: "$6 / 100 MAU / mo CS;\nЕжеквартальный аудит масштабирования + инфраструктура" },
+    { cat: "Маркетинг (платный + бренд)", a: "$3.22M", b: "$1.47M", note: "Год 1–2: только бренд ($5K → $5K/мес)\nГод 3: основной платный ramp ($250K → $350K/Q)" },
+    { cat: "Переменные операционные расходы (CS, модерация, хостинг)", a: "$0.45M", b: "$0.43M", note: "$6 / 100 MAU / mo CS;\nЕжеквартальный аудит масштабирования + инфраструктура" },
   ];
-  const total = { cat: "Итого затраты за 3 года", a: "$5.30M", b: "$3.99M", note: "Формируется из:\n1) привлеченные инвестиции $1.5M\n2) вложения фаундера\n3) выручка за 3 года" };
+  const total = { cat: "Итого затраты за 3 года", a: "$5.30M", b: "$3.43M", note: "Формируется из:\n1) привлеченные инвестиции $1.5M\n2) вложения фаундера\n3) выручка за 3 года" };
   return (
     <SlideBg>
       <div style={{ maxWidth: 980, width: "94%", padding: "0 20px" }}>
         <AD show={s1}>
-          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 6 }}>ПРИЛОЖЕНИЕ 2. РАСПРЕДЕЛЕНИЕ СРЕДСТВ</h2>
+          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 6 }}>ПРИЛОЖЕНИЕ 3. РАСПРЕДЕЛЕНИЕ СРЕДСТВ</h2>
           <p style={{ fontFamily: FONT_SANS, fontSize: 13, color: C.navyLight, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 16 }}>На 3 года · сравнение двух путей</p>
         </AD>
         <AD show={useAnimIn(14, active ? 14 : -1, 400)} delay={200}>
@@ -1320,9 +1318,9 @@ function SlideTeam({ active }) {
   const s1 = useAnimIn(11, active ? 11 : -1, 200);
   const team = [
     { name: "Антон Дегтярик", role: "Основатель и CEO", photo: PHOTOS.anton, items: ["В 17 лет основал первый бизнес: путь от небольшого цветочного магазина до глобальной крипто-фиатной инфраструктуры: $2 млрд годового объема транзакций", "Системная практика ментального здоровья (кундалини-йога, IFS-терапия, интегральный подход) — выстроена на основе личного опыта"] },
-    { name: "Артём Балакно", role: "Технический специалист", photo: PHOTOS.artem, items: ["20+ лет в технологическом бизнесе: игровые проекты на 10 млн пользователей, краудфандинг $2M+ в 100 странах, два экзита (2025)", "Основатель AIVIS.ONE — холдинга с инвестиционной платформой под немецкий строительный актив", "2+ года ежедневной работы с LLM, 100+ кастомных AI-инструментов для бизнеса"] },
     { name: "Александра Киселева", role: "Руководитель продукта", photo: PHOTOS.alexandra, items: ["7+ лет в B2C: запуски в US, Бразилии и РФ, 10+ продуктов с нуля, годовая выручка портфеля €2M+", "Растила метрики до: 95% user satisfaction, 84% completion, +25% LTV, 2.5× к продажам через прогрев лидов", "Собрала и масштабировала 3 продуктовых отдела с нуля (команды до 40 человек)"] },
     { name: "Анастасия Романюта", role: "Бизнес-аналитик\nПроджект-менеджер", photo: PHOTOS.anastasiia, items: ["Более 4 лет опыта в финтехе, биотехнологиях, банкинге и консалтинге", "Экспертиза в стратегическом анализе, оптимизации процессов, построении KPI-систем и работе со стейкхолдерами — опыт на рынках России, Европы и ОАЭ"] },
+    { name: "Артём Балакно", role: "Технический специалист", photo: PHOTOS.artem, items: ["20+ лет в технологическом бизнесе: игровые проекты на 10 млн пользователей, краудфандинг $2M+ в 100 странах, два экзита (2025)", "Основатель AIVIS.ONE — холдинга с инвестиционной платформой под немецкий строительный актив", "2+ года ежедневной работы с LLM, 100+ кастомных AI-инструментов для бизнеса"] },
   ];
   return (
     <SlideBg>
@@ -1634,11 +1632,11 @@ const SLIDES = [
   { component: SlideComp, label: "Конкуренты" },
   { component: SlideMoney, label: "Монетизация" },
   { component: SlideFinModel, label: "Финансовая модель" },
-  { component: SlideYearly, label: "Годовые прогнозы" },
-  { component: SlidePricing, label: "Тарифы" },
-  { component: SlideAllocation, label: "Распределение средств" },
   { component: SlideTeam, label: "Команда" },
   { component: SlideAdvisors, label: "Эксперты" },
+  { component: SlidePricing, label: "Тарифы" },
+  { component: SlideYearly, label: "Годовые прогнозы" },
+  { component: SlideAllocation, label: "Распределение средств" },
   { component: SlideContacts, label: "Контакты" },
 ];
 
