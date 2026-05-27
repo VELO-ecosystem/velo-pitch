@@ -713,7 +713,7 @@ function SlideMarket({ active }) {
     <SlideBg>
       <div style={{ maxWidth: 920, width: "90%", padding: "0 20px" }}>
         <AD show={s1}>
-          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 6 }}>БОЛЕЕ 90 МИЛЛИОНОВ ПОЛЬЗОВАТЕЛЕЙ СКАЧАЛИ ПРИЛОЖЕНИЯ ДЛЯ ОСОЗНАННОСТИ И СНЯТИЯ СТРЕССА В 2024 ГОДУ</h2>
+          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 6 }}>БОЛЕЕ 250 МИЛЛИОНОВ ПОЛЬЗОВАТЕЛЕЙ СКАЧАЛИ ПРИЛОЖЕНИЯ ДЛЯ ОСОЗНАННОСТИ И СНЯТИЯ СТРЕССА В 2025 ГОДУ</h2>
         </AD>
         <AD show={s2} delay={200}>
           <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 18, marginBottom: 24 }}>
@@ -755,19 +755,19 @@ function SlideGrowth({ active }) {
   const s1 = useAnimIn(7, active ? 7 : -1, 200);
   const s2 = useAnimIn(7, active ? 7 : -1, 600);
   const bars = [
-    { label: "Конец\n2026", value: 25000 },
-    { label: "2027", value: 100000 },
-    { label: "2028", value: 600000 },
+    { label: "Q4 2026", value: 5000 },
+    { label: "2027", value: 20000 },
+    { label: "2028", value: 100000 },
   ];
-  const maxVal = 600000;
+  const maxVal = 100000;
   const fmtNum = (v) => v >= 1000000 ? (v / 1000000) + " 000 000" : v >= 1000 ? (v / 1000).toLocaleString() + " 000" : v.toString();
   return (
     <SlideBg>
       <div style={{ maxWidth: 920, width: "90%", padding: "0 20px" }}>
         <AD show={s1}>
-          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 10 }}>ЦЕЛЬ VEL<Th/> — 15% РЫНКА AI И WELLBEING-ПРИЛОЖЕНИЙ К 2028 ГОДУ</h2>
+          <h2 style={{ fontFamily: FONT, fontSize: "clamp(28px, 3.5vw, 40px)", fontFeatureSettings: '"lnum"', color: C.navy, fontWeight: 400, marginBottom: 10 }}>ЦЕЛЬ VEL<Th/> — 3% РЫНКА AI И WELLBEING-ПРИЛОЖЕНИЙ К 2028 ГОДУ</h2>
           <p style={{ fontFamily: FONT_SANS, fontSize: "clamp(13px, 1.3vw, 15px)", color: C.textSoft, fontWeight: 300, lineHeight: 1.7, marginBottom: 4 }}>
-            Захват доли рынка, сопоставимой с текущими лидерами (Calm/Headspace), обеспечивается за счёт гибридной модели (AI + Human Services), которая увеличивает LTV в 2 раза по сравнению с обычными приложениями
+            Захват доли рынка, сопоставимой с текущими лидерами (Calm/Headspace), обеспечивается за счёт гибридной модели трёх крупных категорий (AI + умный дневник + практики), которая увеличивает LTV в 2 раза по сравнению с обычными приложениями
           </p>
         </AD>
         <AD show={s2} delay={200}>
@@ -960,11 +960,12 @@ function SlideMoney({ active }) {
     () => (
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         {[
-          { tier: "PRO", prices: ["$49 / квартал", "$149 / год"], color: C.navyLight, items: ["Трекер состояний перед и после практик", "AI дневник с анализом записей", "Сквозные AI-отчеты по состоянию, паттернам и инсайтам", "Персонализированные рекомендации быстрых практик", "Безлимитные тестирования по самопознанию", "Неограниченный доступ к интерактивным сессиям", "Неограниченный доступ к дневнику сновидений", "AI Match — подбор мастера по дневнику для сессии 1:1", "Inner Lab — интерактивные сценарии"] },
+          { tier: "FREE", prices: ["Бесплатно"], color: C.blue, items: ["Каталог мастеров и live практик", "Дневник", "Трекер состояний до/после практики", "Дневник сновидений (5/мес)", "Тестирования по самопознанию (1/мес)", "Интерактивные сессии (1/мес)"] },
+          { tier: "PRO", prices: ["$49 / квартал", "$149 / год"], color: C.navyLight, items: ["AI дневник с анализом записей", "Сквозные AI-отчеты по состоянию, паттернам и инсайтам", "Персонализированные рекомендации быстрых практик", "Безлимитные тестирования по самопознанию", "Неограниченный доступ к интерактивным сессиям", "Неограниченный доступ к дневнику сновидений", "AI Match — подбор мастера по дневнику для сессии 1:1", "Inner Lab — интерактивные сценарии"] },
           { tier: "ULTRA", prices: ["$149 / квартал", "$499 / год"], color: C.navy, items: ["Персональный AI-коуч 24/7", "Персональные планы под запрос на 30/60/90 дней", "Подключение биометрики (Apple Health / Oura)", "Прогностическая AI-модель (прогноз состояний, спадов, выгорания, блоков)", "Ранний доступ к экспериментальным функциям"], give: { highlight: "+2", text: "годовые PRO-подписки получают люди из waitlist, которым формат пока не по карману" } },
           { tier: "PLATINUM SPONSOR", prices: ["$1,999 / год"], color: C.navyDeep, items: ["Индивидуальная работа с мастером", "Master Notes — мастер вносит инсайты сессий, AI достраивает траекторию", "Членство в клубе VELΘ — курируемое пространство со спикерами, мастерами и разборами кейсов для устойчивого внутреннего движения", "Закрытые офлайн-встречи участников клуба"], give: { highlight: "+5", text: "годовых PRO-подписок для людей из waitlist" } },
         ].map((t, i) => (
-          <div key={i} style={{ flex: "1 1 220px", padding: "18px 20px", borderRadius: 16, background: C.white, border: `2px solid ${t.color}30`, transition: "all 0.3s", cursor: "default", display: "flex", flexDirection: "column" }}
+          <div key={i} style={{ flex: "1 1 200px", padding: "18px 20px", borderRadius: 16, background: C.white, border: `2px solid ${t.color}30`, transition: "all 0.3s", cursor: "default", display: "flex", flexDirection: "column" }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = t.color; e.currentTarget.style.transform = 'translateY(-3px)'; }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = t.color + '30'; e.currentTarget.style.transform = 'none'; }}>
             <div style={{ fontFamily: FONT_SANS, fontSize: 16, fontWeight: 700, color: C.navy, marginBottom: 6 }}>{t.tier}</div>
@@ -973,7 +974,7 @@ function SlideMoney({ active }) {
                 <div key={k} style={{ fontFamily: FONT_SANS, fontSize: 13.5, color: C.blue, fontWeight: 600, lineHeight: 1.4 }}>{p}</div>
               ))}
             </div>
-            <div style={{ minHeight: t.tier === "PLATINUM SPONSOR" ? 218 : "auto" }}>
+            <div style={{ flex: 1 }}>
               {t.items.map((item, j) => (
                 <div key={j} style={{ fontFamily: FONT_SANS, fontSize: 12.5, color: C.textSoft, fontWeight: 300, lineHeight: 1.6, paddingLeft: 12, position: "relative", marginBottom: 4 }}>
                   <span style={{ position: "absolute", left: 0, color: t.color }}>·</span>{item}
@@ -981,7 +982,7 @@ function SlideMoney({ active }) {
               ))}
             </div>
             {t.give && (
-              <div style={{ marginTop: 6, paddingTop: 12, borderTop: `1px solid ${C.navyLight}25` }}>
+              <div style={{ marginTop: 6, paddingTop: 12, borderTop: `1px solid ${C.navyLight}25`, minHeight: 110 }}>
                 <div style={{ fontFamily: FONT_SANS, fontSize: 11, color: C.navyLight, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 6 }}>Через вас — другим</div>
                 <div style={{ fontFamily: FONT_SANS, fontSize: 12.5, color: C.textSoft, fontWeight: 300, lineHeight: 1.55 }}>
                   <span style={{ fontWeight: 700, color: C.navy }}>{t.give.highlight}</span> {t.give.text}
@@ -996,8 +997,7 @@ function SlideMoney({ active }) {
     () => (
       <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
         <div style={{ flex: "1 1 280px", padding: "22px 24px", borderRadius: 16, background: C.white, border: `1px solid ${C.bluePale}60` }}>
-          <div style={{ fontFamily: FONT_SANS, fontSize: 22, fontWeight: 700, color: C.navy, marginBottom: 4 }}>от 1000$</div>
-          <div style={{ fontFamily: FONT_SANS, fontSize: 14, fontWeight: 500, color: C.navyLight, marginBottom: 14 }}>High-Margin Stream</div>
+          <div style={{ fontFamily: FONT_SANS, fontSize: 22, fontWeight: 700, color: C.navy, marginBottom: 14 }}>от $200</div>
           <div style={{ fontFamily: FONT_SANS, fontSize: 14, fontWeight: 600, color: C.navy, marginBottom: 8 }}>Формирование спроса:</div>
           {["На основе расширенной AI-аналитики состояния", "Через персонализированные AI-рекомендации (выявление глубинного запроса)", "Через рекомендации мастера"].map((t, i) => (
             <div key={i} style={{ fontFamily: FONT_SANS, fontSize: 13, color: C.textSoft, fontWeight: 300, lineHeight: 1.7, paddingLeft: 12, position: "relative" }}><span style={{ position: "absolute", left: 0, color: C.bluePale }}>·</span>{t}</div>
@@ -1018,10 +1018,9 @@ function SlideMoney({ active }) {
         <div style={{ fontFamily: FONT_SANS, fontSize: 15, fontWeight: 600, color: C.navy, marginBottom: 12 }}>ПОДПИСКА PRO ДЛЯ МАСТЕРОВ (ФАЗА 2)</div>
         <div style={{ fontFamily: FONT_SANS, fontSize: 14, fontWeight: 500, color: C.navyLight, marginBottom: 14 }}>MVP: Бесплатно (стратегия привлечения supply)</div>
         <div style={{ fontFamily: FONT_SANS, fontSize: 14, fontWeight: 600, color: C.navy, marginBottom: 8 }}>Фаза 2:</div>
-        {["Расширенная аналитика по группам", "Приоритет в рекомендациях", "Расширенная библиотека записей"].map((t, i) => (
+        {["Расширенная аналитика по группам", "Расширенная библиотека записей"].map((t, i) => (
           <div key={i} style={{ fontFamily: FONT_SANS, fontSize: 14, color: C.textSoft, fontWeight: 300, lineHeight: 1.8, paddingLeft: 12, position: "relative" }}><span style={{ position: "absolute", left: 0, color: C.bluePale }}>·</span>{t}</div>
         ))}
-        <div style={{ fontFamily: FONT_SANS, fontSize: 13, fontWeight: 500, color: C.navyLight, marginTop: 16, fontStyle: "italic" }}>Доход платформы: B2B-подписка · Предсказуемый доход</div>
       </div>
     ),
     // Tab 3: Corporate
@@ -1032,7 +1031,6 @@ function SlideMoney({ active }) {
         {["Закрытые комнаты для команд/сообществ", "Регулярные wellbeing-практики", "Mental Wellbeing Coverage для сотрудников"].map((t, i) => (
           <div key={i} style={{ fontFamily: FONT_SANS, fontSize: 14, color: C.textSoft, fontWeight: 300, lineHeight: 1.8, paddingLeft: 12, position: "relative" }}><span style={{ position: "absolute", left: 0, color: C.bluePale }}>·</span>{t}</div>
         ))}
-        <div style={{ fontFamily: FONT_SANS, fontSize: 13, fontWeight: 500, color: C.navyLight, marginTop: 16, fontStyle: "italic" }}>Доход платформы: Корпоративные контракты · Высокий чек</div>
       </div>
     ),
   ];
@@ -1182,27 +1180,29 @@ function SlideYearly({ active }) {
 function SlidePricing({ active }) {
   const s1 = useAnimIn(10, active ? 10 : -1, 200);
   const features = [
-    { name: "Каталог мастеров и live практик", pro: "●", ultra: "●", platinum: "●" },
-    { name: "AI дневник с анализом записей", pro: "●", ultra: "●", platinum: "●" },
-    { name: "Трекер состояний до/после практики", pro: "●", ultra: "●", platinum: "●" },
-    { name: "Дневник сновидений", pro: "●", ultra: "●", platinum: "●" },
-    { name: "Интерактивные сессии самопознания", pro: "●", ultra: "●", platinum: "●" },
-    { name: "Библиотека практик", pro: "●", ultra: "●", platinum: "●" },
-    { name: "AI-отчёты по паттернам и инсайтам", pro: "●", ultra: "●", platinum: "●" },
-    { name: "Рекомендации быстрых практик", pro: "●", ultra: "●", platinum: "●" },
-    { name: "AI Match — подбор мастера", pro: "●", ultra: "●", platinum: "●" },
-    { name: "Inner Lab — интерактивные сценарии", pro: "●", ultra: "●", platinum: "●" },
-    { name: "Персональный AI-коуч 24/7", pro: "○", ultra: "●", platinum: "●" },
-    { name: "Планы на 30/60/90 дней", pro: "○", ultra: "●", platinum: "●" },
-    { name: "Биометрика (Apple Health / Oura)", pro: "○", ultra: "●", platinum: "●" },
-    { name: "Ранний доступ к экспериментальным функциям", pro: "○", ultra: "●", platinum: "●" },
-    { name: "Прогностическая AI-модель (прогноз состояний, спадов, выгорания, блоков)", pro: "○", ultra: "●", platinum: "●" },
-    { name: "Индивидуальная работа с мастером", pro: "○", ultra: "○", platinum: "●" },
-    { name: "Master Notes", pro: "○", ultra: "○", platinum: "●" },
-    { name: "Членство в клубе VELΘ", pro: "○", ultra: "○", platinum: "●" },
-    { name: "Закрытые офлайн-встречи участников клуба", pro: "○", ultra: "○", platinum: "●" },
+    { name: "Каталог мастеров и live практик", free: "●", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Дневник", free: "●", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Трекер состояний до/после практики", free: "●", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Дневник сновидений", free: "5/мес", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Тестирования по самопознанию", free: "1/мес", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Интерактивные сессии", free: "1/мес", pro: "●", ultra: "●", platinum: "●" },
+    { name: "AI дневник с анализом записей", free: "○", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Библиотека практик", free: "○", pro: "●", ultra: "●", platinum: "●" },
+    { name: "AI-отчёты по паттернам и инсайтам", free: "○", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Рекомендации быстрых практик", free: "○", pro: "●", ultra: "●", platinum: "●" },
+    { name: "AI Match — подбор мастера", free: "○", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Inner Lab — интерактивные сценарии", free: "○", pro: "●", ultra: "●", platinum: "●" },
+    { name: "Персональный AI-коуч 24/7", free: "○", pro: "○", ultra: "●", platinum: "●" },
+    { name: "Планы на 30/60/90 дней", free: "○", pro: "○", ultra: "●", platinum: "●" },
+    { name: "Биометрика (Apple Health / Oura)", free: "○", pro: "○", ultra: "●", platinum: "●" },
+    { name: "Ранний доступ к экспериментальным функциям", free: "○", pro: "○", ultra: "●", platinum: "●" },
+    { name: "Прогностическая AI-модель (прогноз состояний, спадов, выгорания, блоков)", free: "○", pro: "○", ultra: "●", platinum: "●" },
+    { name: "Индивидуальная работа с мастером", free: "○", pro: "○", ultra: "○", platinum: "●" },
+    { name: "Master Notes", free: "○", pro: "○", ultra: "○", platinum: "●" },
+    { name: "Членство в клубе VELΘ", free: "○", pro: "○", ultra: "○", platinum: "●" },
+    { name: "Закрытые офлайн-встречи участников клуба", free: "○", pro: "○", ultra: "○", platinum: "●" },
   ];
-  const sponsorRow = { name: "Меценатские места", pro: "○", ultra: "+2 PRO", platinum: "+5 PRO" };
+  const sponsorRow = { name: "Меценатские места", free: "○", pro: "○", ultra: "+2 PRO", platinum: "+5 PRO" };
   const renderCell = (v) => {
     if (v === "●") return <div style={{ width: 14, height: 14, borderRadius: "50%", background: C.navy, margin: "0 auto" }} />;
     if (v === "○") return <div style={{ width: 14, height: 14, borderRadius: "50%", border: `2px solid ${C.bluePale}`, margin: "0 auto" }} />;
@@ -1220,10 +1220,11 @@ function SlidePricing({ active }) {
             <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: FONT_SANS }}>
               <thead>
                 <tr style={{ borderBottom: `2px solid ${C.bluePale}` }}>
-                  <th style={{ padding: "12px 14px", textAlign: "left", fontSize: 13, fontWeight: 600, color: C.navy, width: "52%" }}>Функция</th>
+                  <th style={{ padding: "12px 14px", textAlign: "left", fontSize: 13, fontWeight: 600, color: C.navy, width: "44%" }}>Функция</th>
+                  <th style={{ padding: "12px 14px", textAlign: "center", fontSize: 13, fontWeight: 600, color: C.navy, width: "12%" }}>FREE</th>
                   <th style={{ padding: "12px 14px", textAlign: "center", fontSize: 13, fontWeight: 600, color: C.navy, width: "12%" }}>PRO</th>
                   <th style={{ padding: "12px 14px", textAlign: "center", fontSize: 13, fontWeight: 600, color: C.navy, width: "14%" }}>ULTRA</th>
-                  <th style={{ padding: "12px 14px", textAlign: "center", fontSize: 13, fontWeight: 600, color: C.navy, width: "22%" }}>PLATINUM SPONSOR</th>
+                  <th style={{ padding: "12px 14px", textAlign: "center", fontSize: 13, fontWeight: 600, color: C.navy, width: "18%" }}>PLATINUM SPONSOR</th>
                 </tr>
               </thead>
               <tbody>
@@ -1232,18 +1233,20 @@ function SlidePricing({ active }) {
                     onMouseEnter={e => e.currentTarget.style.background = C.ice + '60'}
                     onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
                     <td style={{ padding: "8px 14px", fontSize: 12, color: C.textSoft, fontWeight: 400 }}>{f.name}</td>
+                    <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(f.free)}</td>
                     <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(f.pro)}</td>
                     <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(f.ultra)}</td>
                     <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(f.platinum)}</td>
                   </tr>
                 ))}
                 <tr>
-                  <td colSpan={4} style={{ padding: "14px 14px 6px", fontFamily: FONT_SANS, fontSize: 11, color: C.navyLight, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", borderTop: `1.5px solid ${C.bluePale}` }}>Что через вас идёт другим</td>
+                  <td colSpan={5} style={{ padding: "14px 14px 6px", fontFamily: FONT_SANS, fontSize: 11, color: C.navyLight, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", borderTop: `1.5px solid ${C.bluePale}` }}>Что через вас идёт другим</td>
                 </tr>
                 <tr style={{ transition: "background 0.2s" }}
                   onMouseEnter={e => e.currentTarget.style.background = C.ice + '60'}
                   onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
                   <td style={{ padding: "8px 14px", fontSize: 12, color: C.textSoft, fontWeight: 400 }}>{sponsorRow.name}</td>
+                  <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(sponsorRow.free)}</td>
                   <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(sponsorRow.pro)}</td>
                   <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(sponsorRow.ultra)}</td>
                   <td style={{ padding: "8px 14px", textAlign: "center" }}>{renderCell(sponsorRow.platinum)}</td>
